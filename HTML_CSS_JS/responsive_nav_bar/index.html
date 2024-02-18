@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <title>Responsive Navbar</title>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav">
+        <div class="nav__logo">
+          <a class="nav__logo--link" href="#">Cool Programmer</a>
+        </div>
+        <div class="nav__menu">
+          <i class="bx bx-menu nav__menu--icon"></i>
+        </div>
+
+        <div class="nav__mobile active">
+          <ul class="nav__mobile--container">
+            <li class="nav__mobile--item">
+              <a href="http://" target="_blank" rel="noopener noreferrer"
+                >Search</a
+              >
+            </li>
+            <li class="nav__mobile--item">
+              <a href="http://" target="_blank" rel="noopener noreferrer"
+                >Sign up</a
+              >
+            </li>
+            <li class="nav__mobile--item">
+              <a href="http://" target="_blank" rel="noopener noreferrer"
+                >Login</a
+              >
+            </li>
+            <li class="nav__mobile--item">
+              <a href="http://" target="_blank" rel="noopener noreferrer"
+                >Services</a
+              >
+            </li>
+            <li class="nav__mobile--item">
+              <a href="http://" target="_blank" rel="noopener noreferrer"
+                >About</a
+              >
+            </li>
+            <li class="nav__mobile--item">
+              <a href="http://" target="_blank" rel="noopener noreferrer"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="nav__desktop">
+          <ul class="nav__links nav__links--primary">
+            <li class="nav__link--item">
+              <a href="http://" target="_blank" rel="noopener noreferrer"
+                >Search</a
+              >
+            </li>
+            <li class="nav__link--item">
+              <a href="http://" target="_blank" rel="noopener noreferrer"
+                >Sign up</a
+              >
+            </li>
+            <li class="nav__link--item">
+              <a href="http://" target="_blank" rel="noopener noreferrer"
+                >Login</a
+              >
+            </li>
+            <li class="nav__link--item nav__link--item-click">
+              <span>More</span>
+            </li>
+          </ul>
+
+          <div class="nav__desktop--secondary">
+            <ul class="nav__links nav__links--secondary">
+              <li class="nav__link--item">
+                <a href="http://" target="_blank" rel="noopener noreferrer"
+                  >Services</a
+                >
+              </li>
+              <li class="nav__link--item">
+                <a href="http://" target="_blank" rel="noopener noreferrer"
+                  >About</a
+                >
+              </li>
+              <li class="nav__link--item">
+                <a href="http://" target="_blank" rel="noopener noreferrer"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <script>
+      let menu = document.querySelector(".nav__menu--icon");
+      let navMobile = document.querySelector(".nav__mobile");
+      let moreLink = document.querySelector(".nav__link--item-click");
+      let navDesktopSecondary = document.querySelector(
+        ".nav__desktop--secondary"
+      );
+      menu.addEventListener("click", (e) => {
+        navMobile.classList.toggle("active");
+      });
+
+      moreLink.addEventListener("click", (e) => {
+        navDesktopSecondary.classList.toggle("active");
+      });
+    </script>
+  </body>
+</html>

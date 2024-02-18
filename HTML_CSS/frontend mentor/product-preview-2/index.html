@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <link rel="stylesheet" href="./assets/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Montserrat:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Product preview card component</title>
+  </head>
+  <body>
+    <div class="dropdown">
+      <h2 class="dropdown__text"></h2>
+      <a href="#display" class="dropdown__anchor"
+        ><img src="./assets/images/down.svg" class="dropdown__icon"
+      /></a>
+      <a href="#" class="dropdown__anchor dropdown__anchor--close"
+        ><img src="./assets/images/close.svg" class="dropdown__icon"
+      /></a>
+    </div>
+
+    <article class="card" id="display">
+      <img
+        src="./assets/images/image-product-mobile.jpg"
+        alt=""
+        class="card__img card__img--mobile"
+      />
+
+      <img
+        src="./assets/images/image-product-desktop.jpg"
+        class="card__img card__img--desktop"
+      />
+      <div class="card__content">
+        <span class="card__span">Perfume</span>
+        <h1 class="card__title">Gabrielle Essence Eau De Parfum</h1>
+        <p class="card__text">
+          A floral, solar and voluptuous interpretation composed by Olivier
+          Polge, Perfumer-Creator for the House of CHANEL.
+        </p>
+        <p class="card__discount">
+          $149.99 <span class="card__price">$169.99</span>
+        </p>
+        <button class="card__button">
+          <img
+            src="./assets/images/icon-cart.svg"
+            alt=""
+            class="card__button-img"
+          />Add to Cart
+        </button>
+      </div>
+    </article>
+  </body>
+</html>

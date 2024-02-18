@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/styles.css" />
+    <title>Dropdown using only modern css</title>
+  </head>
+  <body>
+    <nav class="nav">
+      <div class="nav__container">
+        <h1 class="nav__title">Cool Coder</h1>
+        <a href="#menu" class="nav__menu">
+          <img src="./assets/imgs/menu.svg" class="nav__icon" />
+        </a>
+        <a href="#" class="nav__menu nav__menu--second">
+          <img src="./assets/imgs/close.svg" class="nav__icon" />
+        </a>
+        <ul class="dropdown" id="menu">
+          <li class="dropdown__list">
+            <a href="#" class="dropdown__link">
+              <img
+                src="./assets/imgs/house.svg"
+                alt=""
+                class="dropdown__icon"
+              />
+              <span class="dropdown__span">Home</span>
+            </a>
+          </li>
+
+          <li class="dropdown__list">
+            <a href="#" class="dropdown__link">
+              <img
+                src="./assets/imgs/projects.svg"
+                alt=""
+                class="dropdown__icon"
+              />
+              <span class="dropdown__span">Projects</span>
+              <img src="./assets/imgs/down.svg" class="dropdown__arrow" />
+              <input type="checkbox" name="" class="dropdown__check" />
+            </a>
+
+            <div class="dropdown__content">
+              <ul class="dropdown__sub">
+                <li class="dropdown__li">
+                  <a href="" class="dropdown__anchor">Project 1</a>
+                </li>
+                <li class="dropdown__li">
+                  <a href="" class="dropdown__anchor">Project 2</a>
+                </li>
+                <li class="dropdown__li">
+                  <a href="" class="dropdown__anchor">Project 3</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="dropdown__list">
+            <a href="#" class="dropdown__link">
+              <img
+                src="./assets/imgs/email.svg"
+                alt=""
+                class="dropdown__icon"
+              />
+              <span class="dropdown__span">Email</span>
+              <img src="./assets/imgs/down.svg" class="dropdown__arrow" />
+              <input type="checkbox" name="" class="dropdown__check" />
+            </a>
+
+            <div class="dropdown__content">
+              <ul class="dropdown__sub">
+                <li class="dropdown__li">
+                  <a href="" class="dropdown__anchor">Contact 1</a>
+                </li>
+                <li class="dropdown__li">
+                  <a href="" class="dropdown__anchor">Contact 2</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="dropdown__list">
+            <a href="#" class="dropdown__link">
+              <img src="./assets/imgs/help.svg" alt="" class="dropdown__icon" />
+              <span class="dropdown__span">Help</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </body>
+</html>

@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --white: hsl(0, 0%, 100%);
+  --light-gray: hsl(212, 45%, 89%);
+  --grayish-blue: hsl(220, 15%, 55%);
+  --dark-blue: hsl(218, 44%, 22%);
+  --outfit: "Outfit", sans-serif;
+}
+
+body {
+  /* width: 100vw; */
+  height: 100vh;
+  font-family: var(--outfit);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  background-color: var(--light-gray);
+
+  /* position: relative; */
+}
+
+/* .button {
+  background-color: var(--dark-blue);
+  color: var(--white);
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+} */
+.main {
+  --img1: scale(1);
+  --img2: scale(0);
+}
+
+.main:has(.card:target) {
+  --img1: scale(0);
+  --img2: scale(1);
+  --clip: inset(0 0 0 0);
+  --close: "Close card";
+}
+
+.dropdown {
+  width: 250px;
+  margin-bottom: 10px;
+  /* background-color: var(--white); */
+  display: grid;
+  grid-template-columns: max-content;
+  grid-template-areas: "img";
+  justify-content: center;
+  align-items: center;
+
+  overflow: hidden;
+  /* --img1: scale(1);
+  --img2: scale(0); */
+}
+
+/* .dropdown:has(.dropdown__ul:target) {
+  --img1: scale(0);
+  --img2: scale(1);
+} */
+
+/* .dropdown__title {
+  grid-area: title;
+} */
+
+.dropdown__menu {
+  grid-area: img;
+  position: relative;
+  z-index: 10;
+
+  transform: var(--img1);
+}
+
+.dropdown__menu--second {
+  transform: var(--img2);
+}
+
+.dropdown__icon {
+  width: 50px;
+  display: block;
+}
+
+.card {
+  /* position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); */
+  background-color: var(--white);
+  width: 250px;
+  height: 400px;
+  border-radius: 10px;
+
+  clip-path: var(--clip, inset(50% 52% 50% 48%));
+  transition: 0.5s;
+}
+
+.card__img {
+  width: 100%;
+  padding: 13px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.card__info {
+  margin: 10px;
+  padding: 0 10px;
+  text-align: center;
+}
+
+.card__title {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.card__text {
+  color: var(--grayish-blue);
+  font-size: 13px;
+  margin-bottom: 20px;
+  font-weight: 400;
+}
+
+/* .content::after {
+  content: var(--close, "Open card");
+} */

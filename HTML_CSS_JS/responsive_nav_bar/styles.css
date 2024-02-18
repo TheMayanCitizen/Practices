@@ -1,0 +1,157 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Courier New", Courier, monospace;
+  color: white;
+}
+
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+
+header {
+  width: 100vw;
+  height: 50px;
+  background-color: black;
+}
+
+.nav {
+  display: flex;
+  height: inherit;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.nav__logo--link {
+  font-size: 20px;
+  font-weight: bold;
+  &::before {
+    content: "{";
+    font-size: 25px;
+  }
+
+  &::after {
+    content: "}";
+    font-size: 25px;
+  }
+}
+
+.nav__desktop {
+  display: none;
+}
+
+.active {
+  display: none;
+}
+
+.nav__mobile {
+  width: 100%;
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background-color: black;
+  text-align: center;
+  border-top: 2px solid goldenrod;
+
+  .nav__mobile--item {
+    height: 40px;
+    border-bottom: 2px solid goldenrod;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    &:hover {
+      background-color: lightblue;
+    }
+  }
+}
+
+.nav__menu--icon {
+  font-size: 30px;
+}
+
+@media (min-width: 576px) {
+  .nav__menu,
+  .nav__mobile {
+    display: none;
+  }
+  .nav__desktop--secondary {
+    display: none;
+    width: 15%;
+    height: max-content;
+    padding: 10px;
+    position: absolute;
+    background-color: black;
+    top: 50px;
+    right: 0px;
+    text-align: center;
+    .nav__links--secondary {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      .nav__link--item:hover {
+        background-color: skyblue;
+      }
+    }
+  }
+
+  .nav__desktop {
+    display: block;
+
+    .nav__links--primary {
+      display: flex;
+      width: 50vw;
+      justify-content: space-between;
+      gap: 15px;
+      font-weight: 800;
+      font-size: 18px;
+    }
+
+    .nav__link--item-click:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .nav {
+    justify-content: space-evenly;
+  }
+  .nav__link--item-click {
+    display: none;
+  }
+  .nav__desktop {
+    display: flex;
+    align-items: center;
+
+    .nav__links--primary {
+      display: flex;
+      width: 250px;
+      font-weight: 800;
+      font-size: 1rem;
+    }
+
+    .nav__desktop--secondary {
+      display: block;
+      position: static;
+      width: 50%;
+
+      .nav__links--secondary {
+        flex-direction: row;
+        font-weight: 800;
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+/* 
+320px
+576px
+768px
+992px
+*/

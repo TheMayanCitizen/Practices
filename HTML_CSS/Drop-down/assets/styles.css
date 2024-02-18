@@ -1,0 +1,145 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.nav {
+  background-color: #830248;
+
+  --img1: scale(1);
+  --img2: scale(0);
+}
+
+/* Me permite saber cuando un padre tiene un elemento en especifico */
+/* La clase .nav tiene un hijo con la clase .dropdown y con pseudoclase target?  "target" indica si ha apuntado por anclas o enlaces a un elemento especifico*/
+.nav:has(.dropdown:target) {
+  --img1: scale(0);
+  --img2: scale(1);
+  --clip: inset(0 0 0 0);
+}
+.nav__container {
+  width: 90%;
+  margin: 0 auto;
+  height: 70px;
+
+  display: grid;
+  grid-template-columns: max-content max-content;
+  grid-template-areas: "title img";
+  justify-content: space-between;
+  align-items: center;
+
+  overflow: hidden;
+}
+
+.nav__title {
+  color: #fff;
+  grid-area: title;
+}
+
+.nav__menu {
+  grid-area: img;
+  position: relative;
+  z-index: 10;
+
+  transform: var(--img1);
+}
+
+.nav__menu--second {
+  transform: var(--img2);
+}
+
+.nav__icon {
+  width: 30px;
+  display: block;
+}
+
+.dropdown {
+  position: absolute;
+  background-color: #000;
+  width: 75%;
+  max-width: 300px;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  padding: 1em;
+
+  display: grid;
+  align-content: center;
+  gap: 1rem;
+
+  /* Para que se cree un scroll hacia abajo si el contenido de nuestro dropdown es mas grande que el alto del navegador */
+  overflow-y: auto;
+
+  /* https://bennettfeely.com/clippy/ */
+  /* Lo usamos para desaparecer el dropdow, seleccione una figura tipo inset y puse todas las aristas en la parte superio derecha */
+  clip-path: var(--clip, inset(0 0 100% 100%));
+  transition: clip-path 0.5s;
+}
+
+.dropdown__list {
+  list-style: none;
+}
+
+.dropdown__link {
+  color: rgb(184, 187, 191);
+  padding: 1em 0.7em;
+  text-decoration: none;
+
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+
+  position: relative;
+  background-color: var(--bg, transparent);
+  border-radius: 6px;
+}
+
+.dropdown__list:has(:checked) {
+  --rows: 1fr;
+  --rotate: rotate(180deg);
+  --bg: #28303b;
+}
+
+.dropdown__check {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.dropdown__arrow {
+  margin-left: auto;
+  /* Si no encuentras la variable rotate tu valor sera de 0 */
+  transform: var(--rotate, 0);
+  transition: 0.2s transform;
+}
+
+.dropdown__content {
+  display: grid;
+  /* var(--rows, 0rf) que busque la custom property rows si no la encuentra que el valor sea de cero */
+  grid-template-rows: var(--rows, 0fr);
+  transition: 0.3s grid-template-rows;
+}
+
+.dropdown__sub {
+  overflow: hidden;
+}
+
+.dropdown__li {
+  width: 85%;
+  list-style: none;
+  margin-left: auto;
+}
+
+.dropdown__anchor {
+  display: block;
+  padding: 1em 0;
+  color: #b6babe;
+  text-decoration: none;
+}
