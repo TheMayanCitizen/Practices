@@ -1,0 +1,151 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --red: hsl(0, 78%, 62%);
+  --cyan: hsl(180, 62%, 55%);
+  --orange: hsl(34, 97%, 64%);
+  --blue: hsl(212, 86%, 64%);
+  --very-dark-blue: hsl(234, 12%, 34%);
+  --grayish-blue: hsl(229, 6%, 66%);
+  --very-light-gray: hsl(0, 0%, 98%);
+  --poppins: "Poppins", sans-serif;
+}
+
+body {
+  font-family: var(--poppins);
+  text-align: center;
+  background-color: var(--very-light-gray);
+  width: 350px;
+  height: 1100px;
+  margin: 0 auto;
+  font-weight: 400;
+}
+
+.header {
+  /* background-color: aqua; */
+  padding: 50px;
+}
+
+.header__title {
+  display: block;
+  font-size: 1.2rem;
+}
+
+.header__title-primary {
+  font-weight: 200;
+}
+
+.text__thin {
+  color: var(--grayish-blue);
+}
+.text__bold {
+  font-weight: 600;
+  color: var(--very-dark-blue);
+}
+
+.header__subtitle {
+  margin-top: 20px;
+  font-size: 0.8rem;
+}
+
+.cards {
+  margin: 0 auto;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card {
+  background-color: #fff;
+  padding: 20px;
+  height: 180px;
+  position: relative;
+  border-radius: 5px;
+  box-shadow: 0 20px 30px var(--grayish-blue);
+}
+
+.card__title,
+.card__subtitle {
+  text-align: left;
+}
+
+.card__title {
+  font-size: 1rem;
+}
+
+.card__subtitle {
+  font-size: 0.7rem;
+}
+
+.card__img {
+  position: absolute;
+  bottom: 1em;
+  right: 1em;
+  width: 45px;
+}
+
+.cards__secondary {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card__cyan {
+  border-top: 3px solid var(--cyan);
+}
+
+.card__red {
+  border-top: 3px solid var(--red);
+}
+
+.card__orange {
+  border-top: 3px solid var(--orange);
+}
+
+.card__blue {
+  border-top: 3px solid var(--blue);
+}
+
+@media (min-width: 1200px) {
+  body {
+    width: 100vw;
+    height: 100vh;
+  }
+  .header {
+    padding: 0;
+    /* background-color: beige; */
+    width: 450px;
+    margin: 50px auto;
+  }
+
+  .header__title {
+    font-size: 2rem;
+  }
+  .cards {
+    /* background-color: aqua; */
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 1200px;
+  }
+
+  .card {
+    width: 350px;
+    height: 250px;
+    padding: 30px;
+  }
+
+  .card__title {
+    font-size: 1.2rem;
+  }
+  .card__subtitle {
+    padding-top: 10px;
+    font-size: 0.8rem;
+    line-height: 25px;
+  }
+}
